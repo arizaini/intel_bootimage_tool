@@ -94,8 +94,8 @@ def unpack_bootimg_intel(fname):
     cmdline_block = f.read(4096)
     bootstub = f.read(4096)
 # bootstub is 4k, but can be 8k on some products
-    if not check_byte(f, 1).isalnum():
-        bootstub += f.read(4096)
+#    if not check_byte(f, 1).isalnum():
+#        bootstub += f.read(4096)
 
     kernelsize, ramdisksize = struct.unpack('II', cmdline_block[1024:1032])
 
