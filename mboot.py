@@ -209,7 +209,7 @@ def pack_bootimg_intel(fname):
     topad = 512 - (len(data) % 512)
     data += '\xFF' * topad
 
-    #update signature
+    # update signature
     n_block = (len(data) / 512)
     new_sig = sig[0:48] + struct.pack('I', n_block) + sig[52:]
 
